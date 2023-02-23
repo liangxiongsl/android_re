@@ -1,0 +1,302 @@
+site_name: android
+nav: 
+    - index.md
+    - 1.环境搭建，开发相关:
+        - 1.环境搭建，开发相关/index.md
+        - 1.环境搭建，开发相关/1.背景相关与系统架构分析.md
+        - 1.环境搭建，开发相关/2.开发环境搭建.md
+        - 1.环境搭建，开发相关/3.SDK 更新不了问题解决.md
+        - 1.环境搭建，开发相关/4.Genymotion模拟器安装使用.md
+        - 1.环境搭建，开发相关/5.Git版本管理.md
+        - 1.环境搭建，开发相关/6..9图片制作.md
+        - 1.环境搭建，开发相关/7.界面原型设计.md
+        - 1.环境搭建，开发相关/8.工程相关解析.md
+        - 1.环境搭建，开发相关/9.Android程序签名打包.md
+        - 1.环境搭建，开发相关/10.反编译apk获得代码与资源.md
+    - 2.常用UI控件与事件处理机制:
+        - 2.常用UI控件与事件处理机制/index.md
+        - 2.常用UI控件与事件处理机制/1.View与ViewGroup概念.md
+        - 2.常用UI控件与事件处理机制/2.布局.md
+        - 2.常用UI控件与事件处理机制/3.常用基本控件.md
+        - 2.常用UI控件与事件处理机制/4.日期类控件.md
+        - 2.常用UI控件与事件处理机制/5.Adapter控件.md
+        - 2.常用UI控件与事件处理机制/6.提示类控件.md
+        - 2.常用UI控件与事件处理机制/7.菜单类控件.md
+        - 2.常用UI控件与事件处理机制/8.其他控件.md
+        - 2.常用UI控件与事件处理机制/9.事件处理机制.md
+    - 3.Android四大组件和Intent组件:
+        - 3.Android四大组件和Intent组件/index.md
+        - 3.Android四大组件和Intent组件/1.Actviity(活动).md
+        - 3.Android四大组件和Intent组件/2.Service(服务).md
+        - 3.Android四大组件和Intent组件/3.BroadcastReceiver(广播).md
+        - 3.Android四大组件和Intent组件/4.ContentProvider(内容提供者).md
+        - 3.Android四大组件和Intent组件/5.Intent(意图).md
+    - 4.Fragment:
+        - 4.Fragment/index.md
+        - 4.Fragment/Fragment基本概述.md
+    - 5.数据存储:
+        - 5.数据存储/index.md
+        - 5.数据存储/1.文件存储读写.md
+        - 5.数据存储/2.SharedPreference.md
+        - 5.数据存储/3.SQLite.md
+    - 6.网络编程:
+        - 6.网络编程/index.md
+        - 6.网络编程/1.HTTP详解.md
+        - 6.网络编程/2.XML数据解析.md
+        - 6.网络编程/3.Json数据解析.md
+        - 6.网络编程/4.Android文件上传下载.md
+        - 6.网络编程/5.调用WebService.md
+        - 6.网络编程/6.WebView.md
+        - 6.网络编程/7.Socket.md
+    - 7.绘图与动画:
+        - 7.绘图与动画/index.md
+        - 7.绘图与动画/1.Drawable.md
+        - 7.绘图与动画/2.Bitmap.md
+        - 7.绘图与动画/3.绘图相关API.md
+        - 7.绘图与动画/4.动画.md
+    - 8.多媒体开发:
+        - 8.多媒体开发/index.md
+        - 8.多媒体开发/1.SoundPool播放音效.md
+        - 8.多媒体开发/2.MediaPlayer播放音视频.md
+        - 8.多媒体开发/3.Careme拍照.md
+        - 8.多媒体开发/4.MediaRecord录音.md
+    - 9.系统API，地图定位:
+        - 9.系统API，地图定位/index.md
+        - 9.系统API，地图定位/1.TelephonManager(电话管理器).md
+        - 9.系统API，地图定位/2.SmsManager(短信管理).md
+        - 9.系统API，地图定位/3.AudioManager(音频管理器.md
+        - 9.系统API，地图定位/4.Vibrator(震动器).md
+        - 9.系统API，地图定位/5.AlarmManager(闹钟服务).md
+        - 9.系统API，地图定位/6.PowerManager(电源服务).md
+        - 9.系统API，地图定位/7.WindowManager(窗口管理服务).md
+        - 9.系统API，地图定位/8.LayoutInflater(布局管理器).md
+        - 9.系统API，地图定位/9.WallpaperManager(壁纸管理器).md
+        - 9.系统API，地图定位/10.传感器.md
+        - 9.系统API，地图定位/11.GPS.md
+    - 10.项目实战:
+        - 10.项目实战/index.md
+        - 10.项目实战/DrySister看妹子应用实战.md
+        
+extra_css:
+    - res/extra.css
+extra_javascript:
+    - res/extra.js
+
+    - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2022 - 2023 travis
+
+# repo_url: @
+# repo_name: @
+
+theme:
+    name: material
+    # custom_dir: overrides
+
+    palette:
+        - media: "(prefers-color-scheme)"
+          primary: red
+          accent: red
+          toggle:
+            icon: material/brightness-auto
+            name: 切换到暗模式
+        - media: "(prefers-color-scheme: light)"
+          primary: green
+          accent: green
+          scheme: default 
+          toggle:
+            icon: material/brightness-7
+            name: 切换到默认模式
+        - media: "(prefers-color-scheme: dark)"
+          primary: blue
+          accent: blue
+          scheme: slate
+          toggle:
+            icon: material/brightness-4
+            name: 切换到亮模式
+
+    font:
+        text: Roboto
+        code: Roboto Mono
+
+    language: zh
+    direction: ltr
+
+    logo: https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png
+    favicon: https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png
+    icon:
+        logo: octicons/heart-fill-24
+
+        repo: fontawesome/brands/github
+        edit: material/pencil
+        view: material/eye
+
+
+        admonition:
+            note: fontawesome/solid/note-sticky
+            abstract: fontawesome/solid/book
+            info: fontawesome/solid/circle-info
+            tip: fontawesome/solid/bullhorn
+            success: fontawesome/solid/check
+            question: fontawesome/solid/circle-question
+            warning: fontawesome/solid/triangle-exclamation
+            failure: fontawesome/solid/bomb
+            danger: fontawesome/solid/skull
+            bug: fontawesome/solid/robot
+            example: fontawesome/solid/flask
+            quote: fontawesome/solid/quote-left
+
+
+
+
+    features:
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.sections
+        # - navigation.expand
+        - navigation.prune
+        - navigation.indexes
+        - toc.follow
+        # - toc.integrate
+        - navigation.top
+
+        - search.suggest
+        - search.highlight
+        - search.share
+
+        - header.autohide
+
+        - navigation.footer
+
+        - content.action.edit
+        - content.action.view
+
+        - content.code.copy
+        - content.code.annotate
+
+        - content.tooltips
+
+
+extra:
+    alternate:
+        - name: English
+          link: /en/ 
+          lang: en
+        - name: 中文
+          link: /zh/
+          lang: zh
+
+    homepage: /
+
+    #consent:
+    #    title: cookie
+    #    description:    >-
+    #        sdd
+    #    cookies:
+    #        analytics:
+    #            github
+
+
+    social:
+        - icon: fontawesome/brands/github
+          link: 链接url地址
+          name: 标识名
+        - icon: fontawesome/brands/docker
+          link: 链接url地址
+          name: 标识名
+    generator: false
+
+
+plugins:
+    - search:
+        lang:
+            - en
+            - ja
+        # '[\s\-,:!=\[\]]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+        separator: '[\s\-\.`]+'
+        jieba_dict: res/dict.txt
+        jieba_dict_user: res/user_dict.txt
+    # - typeset
+
+    - glightbox
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+
+    - attr_list
+    - md_in_html
+    - pymdownx.superfences
+
+    - attr_list
+
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true
+    #- pymdownx.tabbed:
+    #    slugify: !!python/object/apply:pymdownx.slugs.slugify
+    #        kwds:
+    #            case: lower
+
+    # - content.tabs.link
+
+
+    - tables
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    - footnotes
+
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+    - attr_list
+    - md_in_html
+
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+
+    - pymdownx.arithmatex:
+        generic: true
+
+    - abbr
+    - attr_list
+    - pymdownx.snippets
+    - pymdownx.snippets:
+        auto_append:
+            - includes/abbr.md
+    
+    - toc:
+        permalink: 👈👈👈
+        title: 目录
+        permalink_title: Anchor link to this section for reference
+        
+        slugify: !!python/object/apply:pymdownx.slugs.slugify
+            kwds:
+              case: lower
+        toc_depth: 3
+
