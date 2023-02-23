@@ -1,0 +1,1847 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../2.%E5%B8%83%E5%B1%80/" rel="prev"/>
+<link href="../4.%E6%97%A5%E6%9C%9F%E7%B1%BB%E6%8E%A7%E4%BB%B6/" rel="next"/>
+<link href="https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<title>3.常用基本控件 - android</title>
+<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../res/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#常用控件">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="android" class="md-header__button md-logo" data-md-component="logo" href="/" title="android">
+<img alt="logo" src="https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            android
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              3.常用基本控件
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换到暗模式" class="md-option" data-md-color-accent="red" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="切换到暗模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="切换到默认模式" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换到默认模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="切换到亮模式" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="切换到亮模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/en/" hreflang="en">
+                    English
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/zh/" hreflang="zh">
+                    中文
+                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Home
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/">
+        1.环境搭建，开发相关
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        2.常用UI控件与事件处理机制
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/">
+        3.Android四大组件和Intent组件
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../4.Fragment/">
+        4.Fragment
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../5.%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/">
+        5.数据存储
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+        6.网络编程
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../7.%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%8A%A8%E7%94%BB/">
+        7.绘图与动画
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../8.%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/">
+        8.多媒体开发
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/">
+        9.系统API，地图定位
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../10.%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
+        10.项目实战
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="android" class="md-nav__button md-logo" data-md-component="logo" href="/" title="android">
+<img alt="logo" src="https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png"/>
+</a>
+    android
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/">1.环境搭建，开发相关</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="1.环境搭建，开发相关" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          1.环境搭建，开发相关
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/1.%E8%83%8C%E6%99%AF%E7%9B%B8%E5%85%B3%E4%B8%8E%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
+        1.背景相关与系统架构分析
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/2.%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        2.开发环境搭建
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/3.SDK%20%E6%9B%B4%E6%96%B0%E4%B8%8D%E4%BA%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
+        3.SDK 更新不了问题解决
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/4.Genymotion%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">
+        4.Genymotion模拟器安装使用
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/5.Git%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+        5.Git版本管理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/6..9%E5%9B%BE%E7%89%87%E5%88%B6%E4%BD%9C/">
+        6..9图片制作
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/7.%E7%95%8C%E9%9D%A2%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1/">
+        7.界面原型设计
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/8.%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3%E8%A7%A3%E6%9E%90/">
+        8.工程相关解析
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/9.Android%E7%A8%8B%E5%BA%8F%E7%AD%BE%E5%90%8D%E6%89%93%E5%8C%85/">
+        9.Android程序签名打包
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%8C%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/10.%E5%8F%8D%E7%BC%96%E8%AF%91apk%E8%8E%B7%E5%BE%97%E4%BB%A3%E7%A0%81%E4%B8%8E%E8%B5%84%E6%BA%90/">
+        10.反编译apk获得代码与资源
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">2.常用UI控件与事件处理机制</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="2.常用UI控件与事件处理机制" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          2.常用UI控件与事件处理机制
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1.View%E4%B8%8EViewGroup%E6%A6%82%E5%BF%B5/">
+        1.View与ViewGroup概念
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.%E5%B8%83%E5%B1%80/">
+        2.布局
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          3.常用基本控件
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        3.常用基本控件
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#常用控件">
+    常用控件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1textview文本框">
+    1.TextView(文本框)
+  </a>
+<nav aria-label="1.TextView(文本框)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1常用属性">
+    1.常用属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2文本属性">
+    2.文本属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3阴影相关属性">
+    3.阴影相关属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4带边框的textview">
+    4.带边框的TextView
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5图片相关属性">
+    5.图片相关属性
+  </a>
+<nav aria-label="5.图片相关属性" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#简单实例">
+    简单实例
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#调整四周图片大小">
+    调整四周图片大小
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6使用autolink属性识别链接类型">
+    6.使用autoLink属性识别链接类型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7textview中的html">
+    7.TextView中的HTML
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8spannablestringspannablestringbuilder定制文本">
+    8.SpannableString&amp;SpannableStringBuilder定制文本
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9跑马灯效果">
+    9.跑马灯效果
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10设置字间距和行间距">
+    10.设置字间距和行间距
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11自动换行">
+    11.自动换行
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2edittext输入框">
+    2.EditText(输入框)
+  </a>
+<nav aria-label="2.EditText(输入框)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1设置默认提示文本">
+    1.设置默认提示文本
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2获得焦点后全选组件内所有文本内容">
+    2.获得焦点后全选组件内所有文本内容
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3限制输入文本类型">
+    3.限制输入文本类型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4最小行最多行单行多行自动换行">
+    4.最小行/最多行/单行/多行/自动换行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5文字缩放-文字大小写">
+    5.文字缩放, 文字大小写
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6margin和padding略">
+    6.margin和padding(略)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7设置edittext获得焦点同时弹出小键盘略">
+    7.设置EditText获得焦点，同时弹出小键盘(略)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8edittext光标位置">
+    8.EditText光标位置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9带表情的edittext略">
+    9.带表情的EditText(略)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10带删除按钮的edittext略">
+    10.带删除按钮的EditText(略)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3button按钮imagebutton图像按钮">
+    3.Button(按钮)&amp;ImageButton(图像按钮)
+  </a>
+<nav aria-label="3.Button(按钮)&amp;ImageButton(图像按钮)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1statelistdrawable简介">
+    1.StateListDrawable简介
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4imageview图像视图">
+    4.ImageView(图像视图)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5radiobutton单选按钮checkbox复选框">
+    5.RadioButton(单选按钮)&amp;CheckBox(复选框)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6togglebutton开关按钮switch开关">
+    6.ToggleButton(开关按钮)&amp;Switch(开关)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7progressbar进度条">
+    7.ProgressBar(进度条)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8seekbar拖动条">
+    8.SeekBar(拖动条)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9ratingbar星级评分条">
+    9.RatingBar(星级评分条)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10scrollview滚动条">
+    10.ScrollView(滚动条)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4.%E6%97%A5%E6%9C%9F%E7%B1%BB%E6%8E%A7%E4%BB%B6/">
+        4.日期类控件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5.Adapter%E6%8E%A7%E4%BB%B6/">
+        5.Adapter控件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6.%E6%8F%90%E7%A4%BA%E7%B1%BB%E6%8E%A7%E4%BB%B6/">
+        6.提示类控件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7.%E8%8F%9C%E5%8D%95%E7%B1%BB%E6%8E%A7%E4%BB%B6/">
+        7.菜单类控件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8.%E5%85%B6%E4%BB%96%E6%8E%A7%E4%BB%B6/">
+        8.其他控件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9.%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/">
+        9.事件处理机制
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/">3.Android四大组件和Intent组件</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="3.Android四大组件和Intent组件" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          3.Android四大组件和Intent组件
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/1.Actviity%28%E6%B4%BB%E5%8A%A8%29/">
+        1.Actviity(活动)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/2.Service%28%E6%9C%8D%E5%8A%A1%29/">
+        2.Service(服务)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/3.BroadcastReceiver%28%E5%B9%BF%E6%92%AD%29/">
+        3.BroadcastReceiver(广播)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/4.ContentProvider%28%E5%86%85%E5%AE%B9%E6%8F%90%E4%BE%9B%E8%80%85%29/">
+        4.ContentProvider(内容提供者)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3.Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%92%8CIntent%E7%BB%84%E4%BB%B6/5.Intent%28%E6%84%8F%E5%9B%BE%29/">
+        5.Intent(意图)
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../4.Fragment/">4.Fragment</a>
+<label for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="4.Fragment" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          4.Fragment
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.Fragment/Fragment%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%BF%B0/">
+        Fragment基本概述
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../5.%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/">5.数据存储</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="5.数据存储" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          5.数据存储
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../5.%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/1.%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E8%AF%BB%E5%86%99/">
+        1.文件存储读写
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../5.%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/2.SharedPreference/">
+        2.SharedPreference
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../5.%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/3.SQLite/">
+        3.SQLite
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">6.网络编程</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="6.网络编程" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          6.网络编程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/1.HTTP%E8%AF%A6%E8%A7%A3/">
+        1.HTTP详解
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2.XML%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">
+        2.XML数据解析
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/3.Json%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">
+        3.Json数据解析
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/4.Android%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/">
+        4.Android文件上传下载
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/5.%E8%B0%83%E7%94%A8WebService/">
+        5.调用WebService
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/6.WebView/">
+        6.WebView
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/7.Socket/">
+        7.Socket
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../7.%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%8A%A8%E7%94%BB/">7.绘图与动画</a>
+<label for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="7.绘图与动画" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          7.绘图与动画
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7.%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%8A%A8%E7%94%BB/1.Drawable/">
+        1.Drawable
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7.%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%8A%A8%E7%94%BB/2.Bitmap/">
+        2.Bitmap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7.%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%8A%A8%E7%94%BB/3.%E7%BB%98%E5%9B%BE%E7%9B%B8%E5%85%B3API/">
+        3.绘图相关API
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7.%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%8A%A8%E7%94%BB/4.%E5%8A%A8%E7%94%BB/">
+        4.动画
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../8.%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/">8.多媒体开发</a>
+<label for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="8.多媒体开发" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+          8.多媒体开发
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8.%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/1.SoundPool%E6%92%AD%E6%94%BE%E9%9F%B3%E6%95%88/">
+        1.SoundPool播放音效
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8.%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/2.MediaPlayer%E6%92%AD%E6%94%BE%E9%9F%B3%E8%A7%86%E9%A2%91/">
+        2.MediaPlayer播放音视频
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8.%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/3.Careme%E6%8B%8D%E7%85%A7/">
+        3.Careme拍照
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8.%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/4.MediaRecord%E5%BD%95%E9%9F%B3/">
+        4.MediaRecord录音
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/">9.系统API，地图定位</a>
+<label for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="9.系统API，地图定位" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+          9.系统API，地图定位
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/1.TelephonManager%28%E7%94%B5%E8%AF%9D%E7%AE%A1%E7%90%86%E5%99%A8%29/">
+        1.TelephonManager(电话管理器)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/2.SmsManager%28%E7%9F%AD%E4%BF%A1%E7%AE%A1%E7%90%86%29/">
+        2.SmsManager(短信管理)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/3.AudioManager%28%E9%9F%B3%E9%A2%91%E7%AE%A1%E7%90%86%E5%99%A8/">
+        3.AudioManager(音频管理器
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/4.Vibrator%28%E9%9C%87%E5%8A%A8%E5%99%A8%29/">
+        4.Vibrator(震动器)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/5.AlarmManager%28%E9%97%B9%E9%92%9F%E6%9C%8D%E5%8A%A1%29/">
+        5.AlarmManager(闹钟服务)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/6.PowerManager%28%E7%94%B5%E6%BA%90%E6%9C%8D%E5%8A%A1%29/">
+        6.PowerManager(电源服务)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/7.WindowManager%28%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%29/">
+        7.WindowManager(窗口管理服务)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/8.LayoutInflater%28%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8%29/">
+        8.LayoutInflater(布局管理器)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/9.WallpaperManager%28%E5%A3%81%E7%BA%B8%E7%AE%A1%E7%90%86%E5%99%A8%29/">
+        9.WallpaperManager(壁纸管理器)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/10.%E4%BC%A0%E6%84%9F%E5%99%A8/">
+        10.传感器
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9.%E7%B3%BB%E7%BB%9FAPI%EF%BC%8C%E5%9C%B0%E5%9B%BE%E5%AE%9A%E4%BD%8D/11.GPS/">
+        11.GPS
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" id="__nav_11" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../10.%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">10.项目实战</a>
+<label for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="10.项目实战" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
+          10.项目实战
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10.%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/DrySister%E7%9C%8B%E5%A6%B9%E5%AD%90%E5%BA%94%E7%94%A8%E5%AE%9E%E6%88%98/">
+        DrySister看妹子应用实战
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#常用控件">
+    常用控件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1textview文本框">
+    1.TextView(文本框)
+  </a>
+<nav aria-label="1.TextView(文本框)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1常用属性">
+    1.常用属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2文本属性">
+    2.文本属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3阴影相关属性">
+    3.阴影相关属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4带边框的textview">
+    4.带边框的TextView
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5图片相关属性">
+    5.图片相关属性
+  </a>
+<nav aria-label="5.图片相关属性" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#简单实例">
+    简单实例
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#调整四周图片大小">
+    调整四周图片大小
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6使用autolink属性识别链接类型">
+    6.使用autoLink属性识别链接类型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7textview中的html">
+    7.TextView中的HTML
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8spannablestringspannablestringbuilder定制文本">
+    8.SpannableString&amp;SpannableStringBuilder定制文本
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9跑马灯效果">
+    9.跑马灯效果
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10设置字间距和行间距">
+    10.设置字间距和行间距
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11自动换行">
+    11.自动换行
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2edittext输入框">
+    2.EditText(输入框)
+  </a>
+<nav aria-label="2.EditText(输入框)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1设置默认提示文本">
+    1.设置默认提示文本
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2获得焦点后全选组件内所有文本内容">
+    2.获得焦点后全选组件内所有文本内容
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3限制输入文本类型">
+    3.限制输入文本类型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4最小行最多行单行多行自动换行">
+    4.最小行/最多行/单行/多行/自动换行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5文字缩放-文字大小写">
+    5.文字缩放, 文字大小写
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6margin和padding略">
+    6.margin和padding(略)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7设置edittext获得焦点同时弹出小键盘略">
+    7.设置EditText获得焦点，同时弹出小键盘(略)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8edittext光标位置">
+    8.EditText光标位置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9带表情的edittext略">
+    9.带表情的EditText(略)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10带删除按钮的edittext略">
+    10.带删除按钮的EditText(略)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3button按钮imagebutton图像按钮">
+    3.Button(按钮)&amp;ImageButton(图像按钮)
+  </a>
+<nav aria-label="3.Button(按钮)&amp;ImageButton(图像按钮)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1statelistdrawable简介">
+    1.StateListDrawable简介
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4imageview图像视图">
+    4.ImageView(图像视图)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5radiobutton单选按钮checkbox复选框">
+    5.RadioButton(单选按钮)&amp;CheckBox(复选框)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6togglebutton开关按钮switch开关">
+    6.ToggleButton(开关按钮)&amp;Switch(开关)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7progressbar进度条">
+    7.ProgressBar(进度条)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8seekbar拖动条">
+    8.SeekBar(拖动条)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9ratingbar星级评分条">
+    9.RatingBar(星级评分条)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10scrollview滚动条">
+    10.ScrollView(滚动条)
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>3.常用基本控件</h1>
+<p>前言：前期只记这些控件的基本使用，其他什么骚操作就不管了</p>
+<h3 id="常用控件">常用控件<a class="headerlink" href="#常用控件" title="Anchor link to this section for reference">👈👈👈</a></h3>
+<ul>
+<li>1.TextView(文本框)</li>
+<li>2.EditText(输入框)</li>
+<li>3.Button(按钮)&amp;ImageButton(图像按钮)</li>
+<li>4.ImageView(图像视图)</li>
+<li>5.RadioButton(单选按钮)&amp;CheckBox(复选框)</li>
+<li>6.ToggleButton(开关按钮)&amp;Switch(开关)</li>
+<li>7.ProgressBar(进度条)</li>
+<li>8.SeekBar(拖动条)</li>
+<li>9.RatingBar(星级评分条)</li>
+<li>10.ScrollView(滚动条)</li>
+</ul>
+<details class="note">
+<summary>Note</summary>
+<p>textview: 1,2, button(3,5,6)
+imageView: 4
+ProgressBar: 7,8,9</p>
+<p>也就是说，前9个组件都不是<code>ViewGroup</code></p>
+</details>
+<h1 id="1textview文本框">1.TextView(文本框)<a class="headerlink" href="#1textview文本框" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p>先介绍几个单位:</p>
+<ul>
+<li>dp(dip): device independent pixels(设备独立像素), 不同设备有不同的显示效果</li>
+<li>px: pixels(像素), 不同设备显示效果相同</li>
+<li>pt: point, 是一个标准的长度单位, 1pt＝<span class="arithmatex">\(\frac{1}{72}\)</span>英寸</li>
+</ul>
+<p><a href="https://developer.android.google.cn/reference/android/widget/TextView.html">TextView官方文档</a></p>
+<h2 id="1常用属性">1.常用属性<a class="headerlink" href="#1常用属性" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<ul>
+<li><code>id</code>: 设置组件id, java中可以通过<code>findViewById()</code>得到该对象</li>
+<li><code>layout_width</code>, <code>layout_height</code>: 宽高, 值为 <code>wrap_content</code> | <code>match_parent</code> | 长度单位值</li>
+<li><code>gravity</code>: 控件<mark class="critic">内容</mark>的对齐方向</li>
+<li><code>background</code>: 背景色 或 图片</li>
+</ul>
+<h2 id="2文本属性">2.文本属性<a class="headerlink" href="#2文本属性" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<ul>
+<li><code>text</code>: 显示的文本, 一般我们是把字符串写到<code>string.xml</code>文件中，然后通过@String/xxx取得对应的字符串内容的</li>
+<li><code>textColor</code>: 字体颜色, 同上, 通过colors.xml资源来引用</li>
+<li><code>textStyle</code>: 字体风格, 值为 <code>normal</code> | <code>bold</code> | <code>italic</code>(斜体)</li>
+<li><code>textSize</code>: 字体大小, 单位一般是<code>sp</code></li>
+</ul>
+<h2 id="3阴影相关属性">3.阴影相关属性<a class="headerlink" href="#3阴影相关属性" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<ul>
+<li>shadowColor: 设置阴影颜色, 需要与shadowRadius一起使用哦!</li>
+<li>shadowRadius: 设置阴影的模糊程度, 设为0.1就变成字体颜色了, 建议使用3.0</li>
+<li>shadowDx: 设置阴影在水平方向的偏移, 就是水平方向阴影开始的横坐标位置</li>
+<li>shadowDy: 设置阴影在竖直方向的偏移, 就是竖直方向阴影开始的纵坐标位置</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">实例</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63cddf3328e15.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63cddf3328e15.png"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;TextView
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    android:layout_width="wrap_content"
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    android:layout_height="wrap_content"
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    android:layout_centerInParent="true"
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    android:shadowColor="#F9F900"
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    android:shadowDx="10.0"
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    android:shadowDy="10.0"
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>    android:shadowRadius="3.0"
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>    android:text="带阴影的TextView"
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    android:textColor="#4A4AFF"
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    android:textSize="30sp" /&gt;
+</code></pre></div>
+</div>
+<h2 id="4带边框的textview">4.带边框的TextView<a class="headerlink" href="#4带边框的textview" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>创建一个<code>ShapeDrawable</code>资源文件(<code>app/main/res/drawable</code>目录下)，然后将<code>TextView</code>的<code>background</code>属性设置为<code>@drawable/资源名</code>即可</p>
+<p><code>ShapeDrawable</code>资源文件的根标签: <code>&lt;shape&gt;</code></p>
+<p><code>ShapeDrawable</code>资源文件的几个子结点:</p>
+<ul>
+<li><code>&lt;solid&gt;</code> - 用于设置背景色<ul>
+<li><code>color</code> - 背景色</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;gradient&gt;</code> - 用于设置渐变色背景</p>
+<ul>
+<li><code>startColor, centerColor, endColor</code> - 起始颜色，中间颜色，结束颜色 (默认渐变方向是: 从左到右)</li>
+<li><code>angle</code> -  渐变方向的偏移量(逆时针), 默认为0</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;stoke&gt;</code> - 边框</p>
+<ul>
+<li><code>width</code> - 边框宽度</li>
+<li><code>color</code> - 边框颜色</li>
+</ul>
+</li>
+<li><code>&lt;corners&gt;</code> - 圆角<ul>
+<li><code>radius, topLeftRadius, topRightRadius, bottomRightRadius, bottomLeftRadius</code> - 四角的圆角程度</li>
+</ul>
+</li>
+<li><code>&lt;padding&gt;</code> - 边距<ul>
+<li><code>top, bottom, left, right</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">solid和gradient都是用于设置背景色的，而后者优先于前者</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">圆形(仅当TextView宽高一样)</label><label for="__tabbed_1_2">“叶子”(仅当TextView宽高一样)</label><label for="__tabbed_1_3">四分之一圆(仅当TextView宽高一样)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce1a306261f.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce1a306261f.png"/></a></p>
+<div class="highlight"><span class="filename">app/main/res/drawable/XXX.xml</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">&lt;shape</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="w"> </span><span class="nt">&gt;</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;gradient</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="na">android:startColor=</span><span class="s">"#ff0000"</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="na">android:centerColor=</span><span class="s">"#ff00ee"</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="na">android:endColor=</span><span class="s">"#0000ff"</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="na">android:angle=</span><span class="s">"-45"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="nt">&lt;stroke</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="na">android:width=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="na">android:color=</span><span class="s">"#FFC0CB"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nt">&lt;corners</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="na">android:radius=</span><span class="s">"500dp"</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="nt">&lt;padding</span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">        </span><span class="na">android:left=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">        </span><span class="na">android:right=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">        </span><span class="na">android:top=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">        </span><span class="na">android:bottom=</span><span class="s">"10dp"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="nt">&lt;/shape&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce1aa9a6151.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce1aa9a6151.png"/></a></p>
+<div class="highlight"><span class="filename">app/main/res/drawable/XXX.xml</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">&lt;shape</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="w"> </span><span class="nt">&gt;</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;gradient</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="na">android:startColor=</span><span class="s">"#ff0000"</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="na">android:centerColor=</span><span class="s">"#ff00ee"</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span><span class="na">android:endColor=</span><span class="s">"#0000ff"</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="na">android:angle=</span><span class="s">"-45"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;stroke</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="na">android:width=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="na">android:color=</span><span class="s">"#FFC0CB"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nt">&lt;corners</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">        </span><span class="na">android:radius=</span><span class="s">"500dp"</span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="na">android:topLeftRadius=</span><span class="s">"0dp"</span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">        </span><span class="na">android:bottomRightRadius=</span><span class="s">"0dp"</span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">        </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="nt">&lt;padding</span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">        </span><span class="na">android:left=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">        </span><span class="na">android:right=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-2-21" id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">        </span><span class="na">android:top=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-2-22" id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">        </span><span class="na">android:bottom=</span><span class="s">"10dp"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-2-23" id="__codelineno-2-23" name="__codelineno-2-23"></a>
+<a href="#__codelineno-2-24" id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="nt">&lt;/shape&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce1b281e8e6.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce1b281e8e6.png"/></a></p>
+<div class="highlight"><span class="filename">app/main/res/drawable/XXX.xml</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nt">&lt;shape</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="w"> </span><span class="nt">&gt;</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="nt">&lt;gradient</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="na">android:startColor=</span><span class="s">"#ff0000"</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="na">android:centerColor=</span><span class="s">"#ff00ee"</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="na">android:endColor=</span><span class="s">"#0000ff"</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="na">android:angle=</span><span class="s">"-45"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="nt">&lt;stroke</span>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="na">android:width=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">        </span><span class="na">android:color=</span><span class="s">"#FFC0CB"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="nt">&lt;corners</span>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">        </span><span class="na">android:radius=</span><span class="s">"500dp"</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="na">android:topLeftRadius=</span><span class="s">"0dp"</span>
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">        </span><span class="na">android:bottomRightRadius=</span><span class="s">"0dp"</span>
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">        </span><span class="na">android:bottomLeftRadius=</span><span class="s">"0dp"</span>
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">        </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span><span class="nt">&lt;padding</span>
+<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">        </span><span class="na">android:left=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">        </span><span class="na">android:right=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">        </span><span class="na">android:top=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">        </span><span class="na">android:bottom=</span><span class="s">"10dp"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a>
+<a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="nt">&lt;/shape&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</input></input></input></div>
+<div class="admonition 例子">
+<p class="admonition-title">例子</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce1d9816d43.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce1d9816d43.png"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">&lt;RelativeLayout</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="na">tools:ignore=</span><span class="s">"MissingConstraints"</span><span class="nt">&gt;</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="nt">&lt;TextView</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">            </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">            </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">            </span><span class="na">android:background=</span><span class="s">"@drawable/img"</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">            </span><span class="na">android:text=</span><span class="s">"djjijjjnijnoijiodd"</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">            </span><span class="na">android:layout_centerInParent=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="nt">&lt;/RelativeLayout&gt;</span>
+</code></pre></div>
+</div>
+<h2 id="5图片相关属性">5.图片相关属性<a class="headerlink" href="#5图片相关属性" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<ul>
+<li><code>drawableTop, drawableButtom, drawableLeft, drawableRight</code> - 环绕在文字四周的图片</li>
+<li><code>drawablePadding</code> - 图片与文字的间距</li>
+</ul>
+<h3 id="简单实例">简单实例<a class="headerlink" href="#简单实例" title="Anchor link to this section for reference">👈👈👈</a></h3>
+<div class="admonition note">
+<p class="admonition-title">实例</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce235e316fa.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce235e316fa.png"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">&lt;RelativeLayout</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="na">tools:ignore=</span><span class="s">"MissingConstraints"</span><span class="nt">&gt;</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="nt">&lt;TextView</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/cxt_txt"</span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="na">android:layout_centerInParent=</span><span class="s">"true"</span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span><span class="na">android:drawableLeft=</span><span class="s">"@drawable/cxk"</span>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="na">android:drawableTop=</span><span class="s">"@drawable/cxk"</span>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">        </span><span class="na">android:drawableRight=</span><span class="s">"@drawable/cxk"</span>
+<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">        </span><span class="na">android:drawableBottom=</span><span class="s">"@drawable/cxk"</span>
+<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">        </span><span class="na">android:background=</span><span class="s">"@drawable/img"</span>
+<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a>
+<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"只因你太美 baby\n\n迎面走来的你\n\n让我如此蠢蠢欲动\n\n这种感觉我从未有\n\nCause I got a crush on you who you"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="nt">&lt;/RelativeLayout&gt;</span>
+</code></pre></div>
+</div>
+<h3 id="调整四周图片大小">调整四周图片大小<a class="headerlink" href="#调整四周图片大小" title="Anchor link to this section for reference">👈👈👈</a></h3>
+<div class="admonition note">
+<p class="admonition-title">简单调整</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce2ac02c491.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce2ac02c491.png"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.myapplication</span><span class="p">;</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">android.graphics.drawable.Drawable</span><span class="p">;</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="p">;</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.TextView</span><span class="p">;</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="p">;</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="nd">@Override</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">fragment_first</span><span class="p">);</span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="n">TextView</span><span class="w"> </span><span class="n">txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">cxt_txt</span><span class="p">);</span><span class="w">   </span><span class="c1">// 获取`TextView`对象</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">        </span><span class="n">Drawable</span><span class="o">[]</span><span class="w"> </span><span class="n">dw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">txt</span><span class="p">.</span><span class="na">getCompoundDrawables</span><span class="p">();</span><span class="w">     </span><span class="c1">// 获取TextView对象的文字四周的图片(依次为左上右下的图片)</span>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">dw</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">setBounds</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// 通过左上角和右下角的两个坐标确定图片跨越的区域(也就是决定了图片的位置和大小)</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">        </span><span class="n">txt</span><span class="p">.</span><span class="na">setCompoundDrawables</span><span class="p">(</span><span class="n">dw</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">dw</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">dw</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">dw</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">);</span><span class="w">   </span><span class="c1">// 更新周围的四个图片</span>
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-6-20" id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<h2 id="6使用autolink属性识别链接类型">6.使用autoLink属性识别链接类型<a class="headerlink" href="#6使用autolink属性识别链接类型" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>若设置了<code>autoLink</code>，那么当文本中出现<code>URL</code>，<code>E-Mail</code>，<code>电话号码</code>或<code>地图</code>的时候，这些内容会高亮，并且点击后会跳转对应的应用</p>
+<ul>
+<li><code>autoLink</code> = <code>web</code> | <code>email</code> | <code>phone</code> | <code>map</code> | <code>none</code> | <code>all</code></li>
+</ul>
+<h2 id="7textview中的html">7.TextView中的HTML<a class="headerlink" href="#7textview中的html" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">textView</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">Html</span><span class="p">.</span><span class="na">fromHtml</span><span class="p">(</span><span class="o">&lt;</span><span class="n">HTML源码</span><span class="o">&gt;</span><span class="p">));</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">textView</span><span class="p">.</span><span class="na">setMovementMethod</span><span class="p">(</span><span class="n">LinkMovementMethod</span><span class="p">.</span><span class="na">getInstance</span><span class="p">());</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">并非支持所有的html标签</p>
+<p>但常见可以使用的有：<code>&lt;font&gt;</code>, <code>&lt;big&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code></p>
+<p><code>&lt;src&gt;</code>标签要用到反射</p>
+<details>
+<summary>如</summary>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">        </span><span class="n">TextView</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtOne</span><span class="p">);</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"图片：&lt;img src = 'icon'/&gt;&lt;br&gt;"</span><span class="p">;</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">        </span><span class="n">t1</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">Html</span><span class="p">.</span><span class="na">fromHtml</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Html</span><span class="p">.</span><span class="na">ImageGetter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">            </span><span class="nd">@Override</span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="n">Drawable</span><span class="w"> </span><span class="nf">getDrawable</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">source</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">                </span><span class="n">Drawable</span><span class="w"> </span><span class="n">draw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">                    </span><span class="n">Field</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getField</span><span class="p">(</span><span class="n">source</span><span class="p">);</span>
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">resourceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">field</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="kc">null</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span>
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">                    </span><span class="n">draw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getResources</span><span class="p">().</span><span class="na">getDrawable</span><span class="p">(</span><span class="n">resourceId</span><span class="p">);</span>
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">                    </span><span class="n">draw</span><span class="p">.</span><span class="na">setBounds</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">draw</span><span class="p">.</span><span class="na">getIntrinsicWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">draw</span><span class="p">.</span><span class="na">getIntrinsicHeight</span><span class="p">());</span>
+<a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">                    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">                </span><span class="p">}</span>
+<a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">draw</span><span class="p">;</span>
+<a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">            </span><span class="p">}</span>
+<a href="#__codelineno-8-22" id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<a href="#__codelineno-8-23" id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-8-24" id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="8spannablestringspannablestringbuilder定制文本">8.SpannableString&amp;SpannableStringBuilder定制文本<a class="headerlink" href="#8spannablestringspannablestringbuilder定制文本" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>除了上面的HTML可以定制我们TextView的样式外，还可以使用SpannableString和SpannableStringBuilder来完成，两者区别：前者针对的是不可变文本，而后者则是针对可变文本, <mark class="critic">这里只介绍前者</mark></p>
+<div class="admonition note">
+<p class="admonition-title">SpannableString提供的API</p>
+<ul>
+<li>BackgroundColorSpan 背景色</li>
+<li>ClickableSpan 文本可点击，有点击事件</li>
+<li>ForegroundColorSpan 文本颜色（前景色）</li>
+<li>MaskFilterSpan 修饰效果，如模糊(BlurMaskFilter)、浮雕(EmbossMaskFilter)</li>
+<li>MetricAffectingSpan 父类，一般不用</li>
+<li>RasterizerSpan 光栅效果</li>
+<li>StrikethroughSpan 删除线（中划线）</li>
+<li>SuggestionSpan 相当于占位符</li>
+<li>UnderlineSpan 下划线</li>
+<li>AbsoluteSizeSpan 绝对大小（文本字体）</li>
+<li>DynamicDrawableSpan 设置图片，基于文本基线或底部对齐。</li>
+<li>ImageSpan 图片</li>
+<li>RelativeSizeSpan 相对大小（文本字体）</li>
+<li>ReplacementSpan 父类，一般不用</li>
+<li>ScaleXSpan 基于x轴缩放</li>
+<li>StyleSpan 字体样式：粗体、斜体等</li>
+<li>SubscriptSpan 下标（数学公式会用到）</li>
+<li>SuperscriptSpan 上标（数学公式会用到）</li>
+<li>TextAppearanceSpan 文本外貌（包括字体、大小、样式和颜色）</li>
+<li>TypefaceSpan 文本字体</li>
+<li>URLSpan 文本超链接</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">实例</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://www.runoob.com/wp-content/uploads/2015/07/22818005.jpg"><img align="right" alt="" src="https://www.runoob.com/wp-content/uploads/2015/07/22818005.jpg"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nd">@Override</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">);</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">        </span><span class="n">TextView</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtOne</span><span class="p">);</span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">        </span><span class="n">TextView</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtTwo</span><span class="p">);</span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">        </span><span class="n">SpannableString</span><span class="w"> </span><span class="n">span</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SpannableString</span><span class="p">(</span><span class="s">"红色打电话斜体删除线绿色下划线图片:."</span><span class="p">);</span>
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">        </span><span class="c1">//1.设置背景色,setSpan时需要指定的flag,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE(前后都不包括)</span>
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ForegroundColorSpan</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="na">RED</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Spanned</span><span class="p">.</span><span class="na">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">        </span><span class="c1">//2.用超链接标记文本</span>
+<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">URLSpan</span><span class="p">(</span><span class="s">"tel:4155551212"</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">Spanned</span><span class="p">.</span><span class="na">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">        </span><span class="c1">//3.用样式标记文本（斜体）</span>
+<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StyleSpan</span><span class="p">(</span><span class="n">Typeface</span><span class="p">.</span><span class="na">BOLD_ITALIC</span><span class="p">),</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">Spanned</span><span class="p">.</span><span class="na">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">        </span><span class="c1">//4.用删除线标记文本</span>
+<a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StrikethroughSpan</span><span class="p">(),</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">Spanned</span><span class="p">.</span><span class="na">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="c1">//5.用下划线标记文本</span>
+<a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UnderlineSpan</span><span class="p">(),</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">Spanned</span><span class="p">.</span><span class="na">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-21" id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">        </span><span class="c1">//6.用颜色标记</span>
+<a href="#__codelineno-9-22" id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ForegroundColorSpan</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="na">GREEN</span><span class="p">),</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="n">Spanned</span><span class="p">.</span><span class="na">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-23" id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">        </span><span class="c1">//7.//获取Drawable资源</span>
+<a href="#__codelineno-9-24" id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">        </span><span class="n">Drawable</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getResources</span><span class="p">().</span><span class="na">getDrawable</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">icon</span><span class="p">);</span>
+<a href="#__codelineno-9-25" id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="na">setBounds</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="na">getIntrinsicWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="na">getIntrinsicHeight</span><span class="p">());</span>
+<a href="#__codelineno-9-26" id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">        </span><span class="c1">//8.创建ImageSpan,然后用ImageSpan来替换文本</span>
+<a href="#__codelineno-9-27" id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="n">ImageSpan</span><span class="w"> </span><span class="n">imgspan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ImageSpan</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">ImageSpan</span><span class="p">.</span><span class="na">ALIGN_BASELINE</span><span class="p">);</span>
+<a href="#__codelineno-9-28" id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">        </span><span class="n">span</span><span class="p">.</span><span class="na">setSpan</span><span class="p">(</span><span class="n">imgspan</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="n">Spannable</span><span class="p">.</span><span class="na">SPAN_INCLUSIVE_EXCLUSIVE</span><span class="p">);</span>
+<a href="#__codelineno-9-29" id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">        </span><span class="n">t1</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">span</span><span class="p">);</span>
+<a href="#__codelineno-9-30" id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-9-31" id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<h2 id="9跑马灯效果">9.跑马灯效果<a class="headerlink" href="#9跑马灯效果" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>android:singleLine="true"
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>android:ellipsize="marquee"
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>android:marqueeRepeatLimit="marquee_forever"
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>android:focusable="true"
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>android:focusableInTouchMode="true"
+</code></pre></div>
+<h2 id="10设置字间距和行间距">10.设置字间距和行间距<a class="headerlink" href="#10设置字间距和行间距" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>字间距：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>xml: `textScaleX="&lt;浮点数&gt;"` (默认值是`1.0f`)
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>java: `textview.setScaleX(&lt;浮点数&gt;)`
+</code></pre></div>
+<p>行间距:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>xml: `lineSpacingExtra="&lt;浮点数&gt;"`
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>java: `textview.setLineSpacing(&lt;浮点数&gt;)`
+</code></pre></div>
+<h2 id="11自动换行">11.自动换行<a class="headerlink" href="#11自动换行" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>singleLine<span class="w"> </span>=<span class="w"> </span>"false"
+</code></pre></div>
+<h1 id="2edittext输入框">2.EditText(输入框)<a class="headerlink" href="#2edittext输入框" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<h2 id="1设置默认提示文本">1.设置默认提示文本<a class="headerlink" href="#1设置默认提示文本" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>android:hint="<span class="nt">&lt;提示文本&gt;</span>"
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>android:textColorHint="<span class="nt">&lt;颜色&gt;</span>"
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">实例</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce46d3a7b9b.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce46d3a7b9b.png"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nt">&lt;RelativeLayout</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="nt">&gt;</span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>
+<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="nt">&lt;EditText</span>
+<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/but1"</span>
+<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-15-10" id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">        </span><span class="na">android:hint=</span><span class="s">"登录名"</span>
+<a href="#__codelineno-15-11" id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">        </span><span class="na">android:layout_centerInParent=</span><span class="s">"true"</span>
+<a href="#__codelineno-15-12" id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">        </span><span class="na">android:textColorHint=</span><span class="s">"#ff0000"</span>
+<a href="#__codelineno-15-13" id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">        </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-15-14" id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">    </span><span class="nt">&lt;EditText</span>
+<a href="#__codelineno-15-15" id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-15-16" id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-15-17" id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">        </span><span class="na">android:layout_below=</span><span class="s">"@+id/but1"</span>
+<a href="#__codelineno-15-18" id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">        </span><span class="na">android:hint=</span><span class="s">"密码"</span>
+<a href="#__codelineno-15-19" id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="w">        </span><span class="na">android:textColorHint=</span><span class="s">"#00ff00"</span>
+<a href="#__codelineno-15-20" id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">        </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-15-21" id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="nt">&lt;/RelativeLayout&gt;</span>
+</code></pre></div>
+</div>
+<h2 id="2获得焦点后全选组件内所有文本内容">2.获得焦点后全选组件内所有文本内容<a class="headerlink" href="#2获得焦点后全选组件内所有文本内容" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>android:selectAllOnFocus="true"
+</code></pre></div>
+<p>比如：<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://www.runoob.com/wp-content/uploads/2015/07/42111410.jpg"><img alt="" src="https://www.runoob.com/wp-content/uploads/2015/07/42111410.jpg"/></a></p>
+<h2 id="3限制输入文本类型">3.限制输入文本类型<a class="headerlink" href="#3限制输入文本类型" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>添加<code>android:inputType</code>属性即可</p>
+<p>文本类型，多为大写、小写和数字符号:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>android:inputType="none"<span class="w">  </span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>android:inputType="text"<span class="w">  </span>
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>android:inputType="textCapCharacters"<span class="w">  </span>
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>android:inputType="textCapWords"<span class="w">  </span>
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>android:inputType="textCapSentences"<span class="w">  </span>
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>android:inputType="textAutoCorrect"<span class="w">  </span>
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>android:inputType="textAutoComplete"<span class="w">  </span>
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a>android:inputType="textMultiLine"<span class="w">  </span>
+<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a>android:inputType="textImeMultiLine"<span class="w">  </span>
+<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a>android:inputType="textNoSuggestions"<span class="w">  </span>
+<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a>android:inputType="textUri"<span class="w">  </span>
+<a href="#__codelineno-17-12" id="__codelineno-17-12" name="__codelineno-17-12"></a>android:inputType="textEmailAddress"<span class="w">  </span>
+<a href="#__codelineno-17-13" id="__codelineno-17-13" name="__codelineno-17-13"></a>android:inputType="textEmailSubject"<span class="w">  </span>
+<a href="#__codelineno-17-14" id="__codelineno-17-14" name="__codelineno-17-14"></a>android:inputType="textShortMessage"<span class="w">  </span>
+<a href="#__codelineno-17-15" id="__codelineno-17-15" name="__codelineno-17-15"></a>android:inputType="textLongMessage"<span class="w">  </span>
+<a href="#__codelineno-17-16" id="__codelineno-17-16" name="__codelineno-17-16"></a>android:inputType="textPersonName"<span class="w">  </span>
+<a href="#__codelineno-17-17" id="__codelineno-17-17" name="__codelineno-17-17"></a>android:inputType="textPostalAddress"<span class="w">  </span>
+<a href="#__codelineno-17-18" id="__codelineno-17-18" name="__codelineno-17-18"></a>android:inputType="textPassword"<span class="w">  </span>
+<a href="#__codelineno-17-19" id="__codelineno-17-19" name="__codelineno-17-19"></a>android:inputType="textVisiblePassword"<span class="w">  </span>
+<a href="#__codelineno-17-20" id="__codelineno-17-20" name="__codelineno-17-20"></a>android:inputType="textWebEditText"<span class="w">  </span>
+<a href="#__codelineno-17-21" id="__codelineno-17-21" name="__codelineno-17-21"></a>android:inputType="textFilter"<span class="w">  </span>
+<a href="#__codelineno-17-22" id="__codelineno-17-22" name="__codelineno-17-22"></a>android:inputType="textPhonetic"<span class="w"> </span>
+</code></pre></div></p>
+<p>数值类型:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>android:inputType="number"<span class="w">  </span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>android:inputType="numberSigned"<span class="w">  </span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>android:inputType="numberDecimal"<span class="w">  </span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>android:inputType="phone"<span class="w">   </span>//拨号键盘<span class="w">  </span>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>android:inputType="datetime"<span class="w">  </span>
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>android:inputType="date"<span class="w">    </span>//日期键盘<span class="w">  </span>
+<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>android:inputType="time"<span class="w">    </span>//时间键盘
+</code></pre></div></p>
+<h2 id="4最小行最多行单行多行自动换行">4.最小行/最多行/单行/多行/自动换行<a class="headerlink" href="#4最小行最多行单行多行自动换行" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>EditText默认是多行显示的，并且能够自动换行</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>android:minLines="<span class="nt">&lt;int&gt;</span>"
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>android:maxLines="<span class="nt">&lt;int&gt;</span>"
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>android:singleLine="<span class="nt">&lt;bool&gt;</span>"
+</code></pre></div>
+<h2 id="5文字缩放-文字大小写">5.文字缩放, 文字大小写<a class="headerlink" href="#5文字缩放-文字大小写" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p>文字缩放：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>android:textScaleX="&lt;宽度放大倍数&gt;"
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>android:textScaleY="&lt;长度放大倍数&gt;"
+</code></pre></div>
+<p>文字大小写：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>android:capitalize="none|sentences|words|characters"
+</code></pre></div>
+<ul>
+<li>sentences：仅第一个字母大写</li>
+<li>words：每一个单词首字母大小，用空格区分单词</li>
+<li>characters:每一个英文字母都大写</li>
+</ul>
+<h2 id="6margin和padding略">6.margin和padding(略)<a class="headerlink" href="#6margin和padding略" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<h2 id="7设置edittext获得焦点同时弹出小键盘略">7.设置EditText获得焦点，同时弹出小键盘(略)<a class="headerlink" href="#7设置edittext获得焦点同时弹出小键盘略" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<h2 id="8edittext光标位置">8.EditText光标位置<a class="headerlink" href="#8edittext光标位置" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<ul>
+<li><code>setSelection(&lt;int&gt;)</code>: 设置光标位置</li>
+<li><code>setSelection(&lt;int&gt;, &lt;int&gt;)</code>: 设置选中的起始和结束坐标</li>
+<li><code>setSelectAllOnFocus(&lt;bool&gt;)</code>: 让EditText获得焦点时选中全部文本</li>
+<li><code>setCursorVisible(false)</code>: 设置光标不显示</li>
+<li><code>getSelectionStart(), getSelectionEnd()</code>: 获取当前光标的前后位置</li>
+</ul>
+<h2 id="9带表情的edittext略">9.带表情的EditText(略)<a class="headerlink" href="#9带表情的edittext略" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<h2 id="10带删除按钮的edittext略">10.带删除按钮的EditText(略)<a class="headerlink" href="#10带删除按钮的edittext略" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<h1 id="3button按钮imagebutton图像按钮">3.Button(按钮)&amp;ImageButton(图像按钮)<a class="headerlink" href="#3button按钮imagebutton图像按钮" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<ul>
+<li><code>Button</code>与<code>ImageButton</code>用法类似，后者图片相关的属性与<code>ImageView</code>相同</li>
+<li><code>Button</code>是<code>TextView</code>的子类，所以<code>TextView</code>上很多属性也可以应用到<code>Button</code> 上！</li>
+</ul>
+<h2 id="1statelistdrawable简介">1.StateListDrawable简介<a class="headerlink" href="#1statelistdrawable简介" title="Anchor link to this section for reference">👈👈👈</a></h2>
+<p><code>StateListDrawable</code>是<code>Drawable</code>资源的一种，可以根据不同状态，设置不同图片效果，关键结点为<code>&lt;selector&gt;</code>, 我们只需要将<code>Button</code>的<code>background</code>属性设置为该<code>drawable</code>资源即可轻松实现</p>
+<div class="admonition note">
+<p class="admonition-title">我们可以设置属性: (????)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>drawable:引用的Drawable位图,我们可以把他放到最前面,就表示组件的正常状态~
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>state_focused:是否获得焦点
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>state_window_focused:是否获得窗口焦点
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a>state_enabled:控件是否可用
+<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a>state_checkable:控件可否被勾选,eg:checkbox
+<a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a>state_checked:控件是否被勾选
+<a href="#__codelineno-22-7" id="__codelineno-22-7" name="__codelineno-22-7"></a>state_selected:控件是否被选择,针对有滚轮的情况
+<a href="#__codelineno-22-8" id="__codelineno-22-8" name="__codelineno-22-8"></a>state_pressed:控件是否被按下
+<a href="#__codelineno-22-9" id="__codelineno-22-9" name="__codelineno-22-9"></a>state_active:控件是否处于活动状态,eg:slidingTab
+<a href="#__codelineno-22-10" id="__codelineno-22-10" name="__codelineno-22-10"></a>state_single:控件包含多个子控件时,确定是否只显示一个子控件
+<a href="#__codelineno-22-11" id="__codelineno-22-11" name="__codelineno-22-11"></a>state_first:控件包含多个子控件时,确定第一个子控件是否处于显示状态
+<a href="#__codelineno-22-12" id="__codelineno-22-12" name="__codelineno-22-12"></a>state_middle:控件包含多个子控件时,确定中间一个子控件是否处于显示状态
+<a href="#__codelineno-22-13" id="__codelineno-22-13" name="__codelineno-22-13"></a>state_last:控件包含多个子控件时,确定最后一个子控件是否处于显示状态
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">按钮点击和释放的背景不同</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce766b50fb0.gif"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce766b50fb0.gif"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="nt">&lt;Button</span>
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">        </span><span class="na">android:background=</span><span class="s">"@drawable/stat"</span>
+<a href="#__codelineno-23-5" id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"你干嘛"</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">@drawable/stat</span><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="nt">&lt;selector</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:state_pressed=</span><span class="s">"true"</span><span class="w"> </span><span class="na">android:drawable=</span><span class="s">"@drawable/cxk"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:state_enabled=</span><span class="s">"false"</span><span class="w"> </span><span class="na">android:drawable=</span><span class="s">"@drawable/img"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-24-5" id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:drawable=</span><span class="s">"@mipmap/ic_launcher"</span><span class="nt">/&gt;</span>
+<a href="#__codelineno-24-6" id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="nt">&lt;/selector&gt;</span>
+</code></pre></div>
+</div>
+<h1 id="4imageview图像视图">4.ImageView(图像视图)<a class="headerlink" href="#4imageview图像视图" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p>属性：</p>
+<ul>
+<li><code>src</code>: 指定图片；<strong>拉伸</strong></li>
+<li><code>background</code>: 指定背景；<strong>填充</strong>，居中</li>
+</ul>
+<p>(src和background都是指定一个图片)</p>
+<h1 id="5radiobutton单选按钮checkbox复选框">5.RadioButton(单选按钮)&amp;CheckBox(复选框)<a class="headerlink" href="#5radiobutton单选按钮checkbox复选框" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<ul>
+<li><code>RadioButton</code>: 单选按钮，其容器通常是<code>RadioGroup</code></li>
+<li><code>CheckBox</code>: 单选框</li>
+</ul>
+<h1 id="6togglebutton开关按钮switch开关">6.ToggleButton(开关按钮)&amp;Switch(开关)<a class="headerlink" href="#6togglebutton开关按钮switch开关" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p>1）ToggleButton</p>
+<ul>
+<li>android:disabledAlpha：设置按钮在禁用时的透明度</li>
+<li>android:textOff：按钮没有被选中时显示的文字</li>
+<li>android:textOn：按钮被选中时显示的文字 另外，除了这个我们还可以自己写个selector，然后设置下Background属性即可</li>
+</ul>
+<p>2）Switch</p>
+<ul>
+<li>android:showText：设置on/off的时候是否显示文字,boolean</li>
+<li>android:splitTrack：是否设置一个间隙，让滑块与底部图片分隔,boolean</li>
+<li>android:switchMinWidth：设置开关的最小宽度</li>
+<li>android:switchPadding：设置滑块内文字的间隔</li>
+<li>android:switchTextAppearance：设置开关的文字外观，暂时没发现有什么用...</li>
+<li>android:textOff：按钮没有被选中时显示的文字</li>
+<li>android:textOn：按钮被选中时显示的文字</li>
+<li>android:textStyle：文字风格，粗体，斜体写划线那些</li>
+<li>android:track：底部的图片</li>
+<li>android:thumb：滑块的图片</li>
+<li>android:typeface：设置字体，默认支持这三种:sans, serif, monospace;除此以外还可以使用 其他字体文件(*.ttf)，首先要将字体文件保存在assets/fonts/目录下，不过需要在Java代码中设置： Typeface typeFace =Typeface.createFromAsset(getAssets(),"fonts/HandmadeTypewriter.ttf"); textView.setTypeface(typeFace);</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce7f8fb6751.gif"><img alt="" src="https://pic.peo.pw/a/2023/01/23/63ce7f8fb6751.gif"/></a></p>
+<h1 id="7progressbar进度条">7.ProgressBar(进度条)<a class="headerlink" href="#7progressbar进度条" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p>应用场景：程序执行比较耗时的操作，用户发送请求等。。</p>
+<p>xml中的属性：</p>
+<ul>
+<li>android:max：进度条的最大值</li>
+<li>android:progress：进度条已完成进度值</li>
+<li>android:progressDrawable：设置轨道对应的Drawable对象</li>
+<li>android:indeterminate：如果设置成true，则进度条不精确显示进度</li>
+<li>android:indeterminateDrawable：设置不显示进度的进度条的Drawable对象</li>
+<li>android:indeterminateDuration：设置不精确显示进度的持续时间</li>
+<li>android:secondaryProgress：二级进度条，类似于视频播放的一条是当前播放进度，一条是缓冲进度，前者通过progress属性进行设置！</li>
+</ul>
+<p>java中的方法：</p>
+<ul>
+<li>getMax()：返回这个进度条的范围的上限</li>
+<li>getProgress()：返回进度</li>
+<li>getSecondaryProgress()：返回次要进度</li>
+<li>incrementProgressBy(int diff)：指定增加的进度</li>
+<li>isIndeterminate()：指示进度条是否在不确定模式下</li>
+<li>setIndeterminate(boolean indeterminate)：设置不确定模式下</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">例子</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/01/23/63ce830de581c.gif"><img align="right" alt="" src="https://pic.peo.pw/a/2023/01/23/63ce830de581c.gif"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">    </span><span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span>
+<a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="w">    </span><span class="na">tools:context=</span><span class="s">".MainActivity"</span><span class="nt">&gt;</span>
+<a href="#__codelineno-25-7" id="__codelineno-25-7" name="__codelineno-25-7"></a>
+<a href="#__codelineno-25-8" id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="w">    </span><span class="cm">&lt;!-- 系统提供的圆形进度条,依次是大中小 --&gt;</span>
+<a href="#__codelineno-25-9" id="__codelineno-25-9" name="__codelineno-25-9"></a>
+<a href="#__codelineno-25-10" id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="w">    </span><span class="nt">&lt;ProgressBar</span>
+<a href="#__codelineno-25-11" id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="w">        </span><span class="na">style=</span><span class="s">"@android:style/Widget.ProgressBar.Small"</span>
+<a href="#__codelineno-25-12" id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-25-13" id="__codelineno-25-13" name="__codelineno-25-13"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-25-14" id="__codelineno-25-14" name="__codelineno-25-14"></a>
+<a href="#__codelineno-25-15" id="__codelineno-25-15" name="__codelineno-25-15"></a><span class="w">    </span><span class="nt">&lt;ProgressBar</span>
+<a href="#__codelineno-25-16" id="__codelineno-25-16" name="__codelineno-25-16"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-25-17" id="__codelineno-25-17" name="__codelineno-25-17"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-25-18" id="__codelineno-25-18" name="__codelineno-25-18"></a>
+<a href="#__codelineno-25-19" id="__codelineno-25-19" name="__codelineno-25-19"></a><span class="w">    </span><span class="nt">&lt;ProgressBar</span>
+<a href="#__codelineno-25-20" id="__codelineno-25-20" name="__codelineno-25-20"></a><span class="w">        </span><span class="na">style=</span><span class="s">"@android:style/Widget.ProgressBar.Large"</span>
+<a href="#__codelineno-25-21" id="__codelineno-25-21" name="__codelineno-25-21"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-25-22" id="__codelineno-25-22" name="__codelineno-25-22"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-25-23" id="__codelineno-25-23" name="__codelineno-25-23"></a>
+<a href="#__codelineno-25-24" id="__codelineno-25-24" name="__codelineno-25-24"></a><span class="w">    </span><span class="cm">&lt;!--系统提供的水平进度条--&gt;</span>
+<a href="#__codelineno-25-25" id="__codelineno-25-25" name="__codelineno-25-25"></a><span class="w">    </span><span class="nt">&lt;ProgressBar</span>
+<a href="#__codelineno-25-26" id="__codelineno-25-26" name="__codelineno-25-26"></a><span class="w">        </span><span class="na">style=</span><span class="s">"@android:style/Widget.ProgressBar.Horizontal"</span>
+<a href="#__codelineno-25-27" id="__codelineno-25-27" name="__codelineno-25-27"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-25-28" id="__codelineno-25-28" name="__codelineno-25-28"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-25-29" id="__codelineno-25-29" name="__codelineno-25-29"></a><span class="w">        </span><span class="na">android:max=</span><span class="s">"100"</span>
+<a href="#__codelineno-25-30" id="__codelineno-25-30" name="__codelineno-25-30"></a><span class="w">        </span><span class="na">android:progress=</span><span class="s">"18"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-25-31" id="__codelineno-25-31" name="__codelineno-25-31"></a>
+<a href="#__codelineno-25-32" id="__codelineno-25-32" name="__codelineno-25-32"></a><span class="w">    </span><span class="nt">&lt;ProgressBar</span>
+<a href="#__codelineno-25-33" id="__codelineno-25-33" name="__codelineno-25-33"></a><span class="w">        </span><span class="na">style=</span><span class="s">"@android:style/Widget.ProgressBar.Horizontal"</span>
+<a href="#__codelineno-25-34" id="__codelineno-25-34" name="__codelineno-25-34"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a href="#__codelineno-25-35" id="__codelineno-25-35" name="__codelineno-25-35"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a href="#__codelineno-25-36" id="__codelineno-25-36" name="__codelineno-25-36"></a><span class="w">        </span><span class="na">android:layout_marginTop=</span><span class="s">"10dp"</span>
+<a href="#__codelineno-25-37" id="__codelineno-25-37" name="__codelineno-25-37"></a><span class="w">        </span><span class="na">android:indeterminate=</span><span class="s">"true"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a href="#__codelineno-25-38" id="__codelineno-25-38" name="__codelineno-25-38"></a>
+<a href="#__codelineno-25-39" id="__codelineno-25-39" name="__codelineno-25-39"></a><span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div>
+</div>
+<h1 id="8seekbar拖动条">8.SeekBar(拖动条)<a class="headerlink" href="#8seekbar拖动条" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p>属性：</p>
+<ul>
+<li>android:max="100" //滑动条的最大值</li>
+<li>android:progress="60" //滑动条的当前值</li>
+<li>android:secondaryProgress="70" //二级滑动条的进度</li>
+<li>android:thumb = "@mipmap/sb_icon" //滑块的drawable</li>
+</ul>
+<p>事件：<code>SeekBar.OnSeekBarChangeListener</code></p>
+<ul>
+<li>onProgressChanged：进度发生改变时会触发</li>
+<li>onStartTrackingTouch：按住SeekBar时会触发</li>
+<li>onStopTrackingTouch：放开SeekBar时触发</li>
+</ul>
+<div class="admonition 实例">
+<p class="admonition-title">实例</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://www.runoob.com/wp-content/uploads/2015/08/22291787.jpg"><img align="right" alt="" src="https://www.runoob.com/wp-content/uploads/2015/08/22291787.jpg"/></a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a>public<span class="w"> </span>class<span class="w"> </span>MainActivity<span class="w"> </span>extends<span class="w"> </span>AppCompatActivity<span class="w"> </span>{
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">    </span>private<span class="w"> </span>SeekBar<span class="w"> </span>sb_normal;
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">    </span>private<span class="w"> </span>TextView<span class="w"> </span>txt_cur;
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">    </span>private<span class="w"> </span>Context<span class="w"> </span>mContext;
+<a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a>
+<a href="#__codelineno-26-7" id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">    </span>@Override
+<a href="#__codelineno-26-8" id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">    </span>protected<span class="w"> </span>void<span class="w"> </span>onCreate(Bundle<span class="w"> </span>savedInstanceState)<span class="w"> </span>{
+<a href="#__codelineno-26-9" id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="w">        </span>super.onCreate(savedInstanceState);
+<a href="#__codelineno-26-10" id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="w">        </span>setContentView(R.layout.activity_main);
+<a href="#__codelineno-26-11" id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="w">        </span>mContext<span class="w"> </span>=<span class="w"> </span>MainActivity.this;
+<a href="#__codelineno-26-12" id="__codelineno-26-12" name="__codelineno-26-12"></a><span class="w">        </span>bindViews();
+<a href="#__codelineno-26-13" id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="w">    </span>}
+<a href="#__codelineno-26-14" id="__codelineno-26-14" name="__codelineno-26-14"></a>
+<a href="#__codelineno-26-15" id="__codelineno-26-15" name="__codelineno-26-15"></a><span class="w">    </span>private<span class="w"> </span>void<span class="w"> </span>bindViews()<span class="w"> </span>{
+<a href="#__codelineno-26-16" id="__codelineno-26-16" name="__codelineno-26-16"></a><span class="w">        </span>sb_normal<span class="w"> </span>=<span class="w"> </span>(SeekBar)<span class="w"> </span>findViewById(R.id.sb_normal);
+<a href="#__codelineno-26-17" id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="w">        </span>txt_cur<span class="w"> </span>=<span class="w"> </span>(TextView)<span class="w"> </span>findViewById(R.id.txt_cur);
+<a href="#__codelineno-26-18" id="__codelineno-26-18" name="__codelineno-26-18"></a><span class="w">        </span>sb_normal.setOnSeekBarChangeListener(new<span class="w"> </span>SeekBar.OnSeekBarChangeListener()<span class="w"> </span>{
+<a href="#__codelineno-26-19" id="__codelineno-26-19" name="__codelineno-26-19"></a><span class="w">            </span>@Override
+<a href="#__codelineno-26-20" id="__codelineno-26-20" name="__codelineno-26-20"></a><span class="w">            </span>public<span class="w"> </span>void<span class="w"> </span>onProgressChanged(SeekBar<span class="w"> </span>seekBar,<span class="w"> </span>int<span class="w"> </span>progress,<span class="w"> </span>boolean<span class="w"> </span>fromUser)<span class="w"> </span>{
+<a href="#__codelineno-26-21" id="__codelineno-26-21" name="__codelineno-26-21"></a><span class="w">                </span>txt_cur.setText("当前进度值:"<span class="w"> </span>+<span class="w"> </span>progress<span class="w"> </span>+<span class="w"> </span>"<span class="w">  </span>/<span class="w"> </span>100<span class="w"> </span>");
+<a href="#__codelineno-26-22" id="__codelineno-26-22" name="__codelineno-26-22"></a><span class="w">            </span>}
+<a href="#__codelineno-26-23" id="__codelineno-26-23" name="__codelineno-26-23"></a>
+<a href="#__codelineno-26-24" id="__codelineno-26-24" name="__codelineno-26-24"></a><span class="w">            </span>@Override
+<a href="#__codelineno-26-25" id="__codelineno-26-25" name="__codelineno-26-25"></a><span class="w">            </span>public<span class="w"> </span>void<span class="w"> </span>onStartTrackingTouch(SeekBar<span class="w"> </span>seekBar)<span class="w"> </span>{
+<a href="#__codelineno-26-26" id="__codelineno-26-26" name="__codelineno-26-26"></a><span class="w">                </span>Toast.makeText(mContext,<span class="w"> </span>"触碰SeekBar",<span class="w"> </span>Toast.LENGTH_SHORT).show();
+<a href="#__codelineno-26-27" id="__codelineno-26-27" name="__codelineno-26-27"></a><span class="w">            </span>}
+<a href="#__codelineno-26-28" id="__codelineno-26-28" name="__codelineno-26-28"></a>
+<a href="#__codelineno-26-29" id="__codelineno-26-29" name="__codelineno-26-29"></a><span class="w">            </span>@Override
+<a href="#__codelineno-26-30" id="__codelineno-26-30" name="__codelineno-26-30"></a><span class="w">            </span>public<span class="w"> </span>void<span class="w"> </span>onStopTrackingTouch(SeekBar<span class="w"> </span>seekBar)<span class="w"> </span>{
+<a href="#__codelineno-26-31" id="__codelineno-26-31" name="__codelineno-26-31"></a><span class="w">                </span>Toast.makeText(mContext,<span class="w"> </span>"放开SeekBar",<span class="w"> </span>Toast.LENGTH_SHORT).show();
+<a href="#__codelineno-26-32" id="__codelineno-26-32" name="__codelineno-26-32"></a><span class="w">            </span>}
+<a href="#__codelineno-26-33" id="__codelineno-26-33" name="__codelineno-26-33"></a><span class="w">        </span>});
+<a href="#__codelineno-26-34" id="__codelineno-26-34" name="__codelineno-26-34"></a><span class="w">    </span>}
+<a href="#__codelineno-26-35" id="__codelineno-26-35" name="__codelineno-26-35"></a>}
+</code></pre></div>
+</div>
+<h1 id="9ratingbar星级评分条">9.RatingBar(星级评分条)<a class="headerlink" href="#9ratingbar星级评分条" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p>属性：</p>
+<ul>
+<li>android:isIndicator：是否用作指示，用户无法更改，默认false</li>
+<li>android:numStars：显示多少个星星，必须为整数</li>
+<li>android:rating：默认评分值，必须为浮点数</li>
+<li>android:stepSize： 评分每次增加的值，必须为浮点数</li>
+</ul>
+<p>样式：</p>
+<ul>
+<li>style="?android:attr/ratingBarStyleSmall"</li>
+<li>style="?android:attr/ratingBarStyleIndicator"</li>
+</ul>
+<p>事件：OnRatingBarChangeListener</p>
+<ul>
+<li>onRatingChanged()</li>
+</ul>
+<h1 id="10scrollview滚动条">10.ScrollView(滚动条)<a class="headerlink" href="#10scrollview滚动条" title="Anchor link to this section for reference">👈👈👈</a></h1>
+<p><code>ScrollView</code>可以称为“竖直滚动条”，对应的<code>HorizontalScrollView</code>称为“水平滚动条”</p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 2.布局" class="md-footer__link md-footer__link--prev" href="../2.%E5%B8%83%E5%B1%80/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  上一页
+                </span>
+                2.布局
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 4.日期类控件" class="md-footer__link md-footer__link--next" href="../4.%E6%97%A5%E6%9C%9F%E7%B1%BB%E6%8E%A7%E4%BB%B6/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
+                4.日期类控件
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 travis
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script src="../../res/extra.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
